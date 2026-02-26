@@ -1,20 +1,18 @@
 "use strict";
 
-/* -------------------------------------------------
-   1) SCROLL-OBSERVER: Tildel .show-animate ved scroll
---------------------------------------------------- */
 const sections = document.querySelectorAll("section");
 
-// Overvåg scroll og aktiver .show-animate på sektioner
+// Overvåg scroll og aktiver .section1 på sektioner
+
 window.onscroll = () => {
   sections.forEach((sec) => {
     const scrollDistance = window.scrollY;
     const secDistance = sec.offsetTop;
 
     if (scrollDistance >= secDistance) {
-      sec.classList.add("show-animate");
+      sec.classList.add("sec1");
     } else {
-      sec.classList.remove("show-animate");
+      sec.classList.remove("sec1");
     }
   });
 };
@@ -37,31 +35,31 @@ if (sectionOne) {
 
 // NYT NYT Vanilla JS
 
-const soundDog = new Audio("../sound/dog.wav");
-const soundHorse = new Audio("../sound/horse.wav");
-const soundBear = new Audio("../sound/bear.wav");
+const soundCar1 = new Audio("../sound/car-engine-sound.mp3");
+const soundCar2 = new Audio("../sound/car-engine-sound.mp3");
+const soundCar3 = new Audio("../sound/car-engine-sound.mp3");
 
-const horseCard = document.getElementById("horseCard");
-const bearCard = document.getElementById("bearCard");
-const dogCard = document.getElementById("dogCard");
+const car1Card = document.getElementById("car1Card");
+const car2Card = document.getElementById("car2Card");
+const car3Card = document.getElementById("car3Card");
 
-if (horseCard) {
-   horseCard.addEventListener("click", function() {
-      soundHorse.play();
-      horseCard.classList.toggle("flipped");
+if (car1Card) {
+   car1Card.addEventListener("click", function() {
+      soundCar1.play();
+      car1Card.classList.toggle("flipped");
    });
 }
 
-if (bearCard) {
-   bearCard.addEventListener("click", function() {
-      soundBear.play();
-      bearCard.classList.toggle("flipped");
+if (car2Card) {
+   car2Card.addEventListener("click", function() {
+      soundCar2.play();
+      car2Card.classList.toggle("flipped");
    });
 }
 
-if (dogCard) {
-   dogCard.addEventListener("click", function() {
-      soundDog.play();
-      dogCard.classList.toggle("flipped");
+if (car3Card) {
+   car3Card.addEventListener("click", function() {
+      soundCar3.play();
+      car3Card.classList.toggle("flipped");
    });
 }
